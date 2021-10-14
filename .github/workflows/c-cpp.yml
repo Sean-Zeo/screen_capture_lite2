@@ -19,8 +19,10 @@ jobs:
       run: ls
     - name: check path
       run:  pwd
+    - name: change directory
+      run: cd ..
     - name: CMake@1
-      run: cmake '.. -G"Visual Studio 16 2019" -DCMAKE_GENERATOR_PLATFORM=x64 -A x64 -DCMAKE_INSTALL_PREFIX=../output'
+      run: cmake '.. -G"Visual Studio 16 2019" -DCMAKE_GENERATOR_PLATFORM=x64 -A x64 -DCMAKE_INSTALL_PREFIX=./output'
     - name: CMake@1
       run: cmake --build . --target INSTALL
     - name: check directory
