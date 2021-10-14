@@ -1,0 +1,21 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: CMake@1
+      run: cmake '.. -G"Visual Studio 16 2019" -DCMAKE_GENERATOR_PLATFORM=x64 -A x64 -DCMAKE_INSTALL_PREFIX=./output'
+    - name: CMake@1
+      run: cmake --build . --target INSTALL
+    - name: check directory
+      run: ls
