@@ -20,7 +20,7 @@ jobs:
     - name: check path
       run:  pwd
     - name: CMake@1
-      run: cmake -G"Visual Studio 2019" -DCMAKE_GENERATOR_PLATFORM=x64 -A x64
+      run: cmake -G"Visual Studio 17 2022" -DCMAKE_GENERATOR_PLATFORM=x64 -A x64
     - name: CMake@1
       run: cmake --build . --target INSTALL
     - name: check directory
